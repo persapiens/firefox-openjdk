@@ -1,14 +1,9 @@
-FROM persapiens/openjdk:8u162
+FROM alpine:edge
 MAINTAINER Marcelo Fernandes <persapiens@gmail.com>
 
-# install headless gui tools, firefox and create firefox folders
-RUN apt-get update -qqy && \
-  apt-get upgrade -qqy --no-install-recommends && \
-  apt-get install -qqy xvfb libgconf-2-4 && \
-  apt-get -qqy --no-install-recommends install firefox && \
-  rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* && \
-  mkdir /.cache /.dbus /.gconf /.mozilla /Desktop && \
-  chmod -R 777 /.cache /.dbus /.gconf /.mozilla /Desktop
+# install openjdk8, headless gui tools, firefox
+RUN echo "http://dl-cdn.alpinelinux.org/alpine/edge/testing" >> /etc/apk/repositories && \
+  apk add --no-cache --update openjdk8 ttf-dejavu xvfb firefox 
 
 ADD xvfb-firefox /usr/bin/xvfb-firefox
 RUN chmod +x /usr/bin/xvfb-firefox \
