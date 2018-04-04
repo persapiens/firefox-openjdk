@@ -1,9 +1,10 @@
 FROM alpine:edge
 MAINTAINER Marcelo Fernandes <persapiens@gmail.com>
 
-# install openjdk8, headless gui tools, firefox
+# install openjdk8, headless gui tools, bash, firefox
 RUN echo "http://dl-cdn.alpinelinux.org/alpine/edge/testing" >> /etc/apk/repositories && \
-  apk add --no-cache --update openjdk8 ttf-dejavu xvfb firefox 
+  apk add --no-cache --update openjdk8 ttf-dejavu xvfb bash firefox && \
+  rm -rf /var/cache/apk/*
 
 ADD xvfb-firefox /usr/bin/xvfb-firefox
 RUN chmod +x /usr/bin/xvfb-firefox \
