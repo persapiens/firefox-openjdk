@@ -1,9 +1,9 @@
-FROM alpine:edge
+FROM persapiens/openjdk:11u2-slim-alpine
 MAINTAINER Marcelo Fernandes <persapiens@gmail.com>
 
-# install openjdk8, headless gui tools, bash, firefox, procps
+# install headless gui tools, bash, firefox
 RUN echo "http://dl-cdn.alpinelinux.org/alpine/edge/testing" >> /etc/apk/repositories && \
-  apk add --no-cache --update openjdk8 ttf-dejavu xvfb bash firefox procps
+  apk add --no-cache --update xvfb bash firefox
 
 ADD xvfb-firefox /usr/bin/xvfb-firefox
 # install xvfb-run script
