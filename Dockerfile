@@ -1,4 +1,4 @@
-FROM persapiens/openjdk:11u4-jre-alpine
+FROM persapiens/openjdk:11u4-alpine
 MAINTAINER Marcelo Fernandes <persapiens@gmail.com>
 
 # install headless gui tools, bash, firefox
