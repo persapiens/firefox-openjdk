@@ -1,4 +1,4 @@
-FROM persapiens/openjdk:8u191
+FROM persapiens/openjdk:8u212
 MAINTAINER Marcelo Fernandes <persapiens@gmail.com>
 
 # install headless gui tools, firefox and create firefox folders
