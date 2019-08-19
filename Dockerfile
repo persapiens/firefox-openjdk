@@ -1,9 +1,19 @@
 FROM alpine:edge
 MAINTAINER Marcelo Fernandes <persapiens@gmail.com>
 
-# install openjdk11, headless gui tools, bash, firefox, procps
-RUN echo "http://dl-cdn.alpinelinux.org/alpine/edge/testing" >> /etc/apk/repositories && \
-  apk add --no-cache --update openjdk11 ttf-dejavu xvfb bash firefox procps
+# add ttf-dejavu fonts
+# add openjdk11
+# add ps procps replacement
+# add xvfb headless gui
+# add bash
+# add firefox
+RUN apk upgrade --no-cache && \
+  apk add --no-cache ttf-dejavu && \
+  apk add --no-cache openjdk11 && \
+  apk add --no-cache procps && \
+  apk add --no-cache xvfb bash && \
+  echo "http://dl-cdn.alpinelinux.org/alpine/edge/testing" >> /etc/apk/repositories && \
+  apk add --no-cache --update firefox
 
 ADD xvfb-firefox /usr/bin/xvfb-firefox
 # install xvfb-run script
