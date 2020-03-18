@@ -1,5 +1,6 @@
-FROM persapiens/openjdk:11u6
-MAINTAINER Marcelo Fernandes <persapiens@gmail.com>
+FROM adoptopenjdk:11.0.6_10-jdk-hotspot
+
+LABEL MANTAINER="Marcelo Fernandes <persapiens@gmail.com>"
 
 # install headless gui tools, firefox and create firefox folders
 RUN apt-get update -qqy && \
