@@ -1,5 +1,6 @@
-FROM persapiens/openjdk:8u222
-MAINTAINER Marcelo Fernandes <persapiens@gmail.com>
+FROM adoptopenjdk:jdk8u252-b09
+
+LABEL MAINTAINER="Marcelo Fernandes <persapiens@gmail.com>"
 
 # install headless gui tools, firefox and create firefox folders
 RUN apt-get update -qqy && \
