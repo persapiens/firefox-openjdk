@@ -1,5 +1,6 @@
 FROM alpine:edge
-MAINTAINER Marcelo Fernandes <persapiens@gmail.com>
+
+LABEL MAINTAINER="Marcelo Fernandes <persapiens@gmail.com>"
 
 # add openjdk11
 # add ttf-dejavu fonts
