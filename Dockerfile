@@ -1,4 +1,4 @@
-FROM adoptopenjdk:jdk8u252-b09
+FROM adoptopenjdk/openjdk8:jdk8u252-b09
 
 LABEL MAINTAINER="Marcelo Fernandes <persapiens@gmail.com>"
 
