@@ -1,21 +1,14 @@
-FROM alpine:edge
+FROM adoptopenjdk/openjdk11:jdk-11.0.8_10-alpine
 
 LABEL MAINTAINER="Marcelo Fernandes <persapiens@gmail.com>"
 
-# add openjdk11
-# add ttf-dejavu fonts
-# add ps procps replacement
 # add xvfb headless gui
 # add bash
 # add firefox
 RUN apk upgrade --no-cache && \
-  apk add --no-cache openjdk11 && \
-  apk add --no-cache ttf-dejavu && \
-  apk add --no-cache procps && \
   apk add --no-cache xvfb && \
   apk add --no-cache bash && \
-  echo "http://dl-cdn.alpinelinux.org/alpine/edge/testing" >> /etc/apk/repositories && \
-  apk add --no-cache --update firefox
+  apk add --no-cache firefox
 
 ADD xvfb-firefox /usr/bin/xvfb-firefox
 # install xvfb-run script
